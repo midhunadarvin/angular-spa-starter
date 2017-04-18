@@ -1,0 +1,50 @@
+{
+  "name": "angular-spa-starter",
+  "version": "0.0.1",
+  "description": "Angular 4 single page application starter",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "ng serve --open"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/midhunadarvin/angular-spa-starter.git"
+  },
+  "keywords": [
+    "angular4",
+    "spa",
+    "typescript",
+    "angular-starter"
+  ],
+  "author": "midhunadarvin@gmail.com",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/midhunadarvin/angular-spa-starter/issues"
+  },
+  "homepage": "https://github.com/midhunadarvin/angular-spa-starter#readme",
+  "dependencies": {
+    "@angular/common": "^4.0.0",
+    "@angular/compiler": "^4.0.0",
+    "@angular/core": "^4.0.0",
+    "@angular/forms": "^4.0.0",
+    "@angular/http": "^4.0.0",
+    "@angular/platform-browser": "^4.0.0",
+    "@angular/platform-browser-dynamic": "^4.0.0",
+    "@angular/router": "^4.0.0",
+    "bootstrap": "^4.0.0-alpha.6",
+    "font-awesome": "^4.7.0",
+    "jquery": "^3.2.1",
+    "ngx-resource": "^2.0.5",
+    "rxjs": "^5.1.0",
+    "tether": "1.4.0",
+    "zone.js": "^0.8.4"
+  },
+  "devDependencies": {
+    "@angular/cli": "1.0.0",
+    "@angular/compiler-cli": "^4.0.0",
+    "script-loader": "^0.7.0",
+    "tslint": "~4.5.0",
+    "typescript": "~2.2.0"
+  }
+}
