@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/midhunadarvin/angular-spa-starter#readme",
   "dependencies": {
+    "@agm/core": "^1.0.0-beta.0",
     "@angular/common": "^4.0.0",
     "@angular/compiler": "^4.0.0",
     "@angular/core": "^4.0.0",
@@ -33,8 +34,10 @@
     "@angular/platform-browser-dynamic": "^4.0.0",
     "@angular/router": "^4.0.0",
     "bootstrap": "^4.0.0-alpha.6",
+    "eonasdan-bootstrap-datetimepicker": "git+https://github.com/midhunadarvin/bootstrap-datetimepicker.git",
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
+    "ngx-eonasdan-datetimepicker": "git+https://github.com/midhunadarvin/ngx-eonasdan-datetimepicker.git",
     "ngx-resource": "^2.0.5",
     "rxjs": "^5.1.0",
     "tether": "1.4.0",
@@ -43,6 +46,7 @@
   "devDependencies": {
     "@angular/cli": "1.0.0",
     "@angular/compiler-cli": "^4.0.0",
+    "@types/googlemaps": "^3.26.20",
     "script-loader": "^0.7.0",
     "tslint": "~4.5.0",
     "typescript": "~2.2.0"

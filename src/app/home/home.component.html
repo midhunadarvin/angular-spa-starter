@@ -1,5 +1,10 @@
+  <!-- this creates a google map on the page with the given lat/lng from -->
+  <!-- the component as the initial center of the map: -->
+  
+
 <div class="container">
   <!-- Content here -->
+  
   <div class="row my-3">
     <div class="col-12">
       <div class="card" *ngIf="isLoading">
@@ -10,6 +15,8 @@
       </div>
     </div>
   </div>
+
+
 
   <div class="row my-3">
     <div class="col-lg-6 my-3" *ngFor="let item of repos;let i = index;">
@@ -89,6 +96,21 @@
       </label>
           </div>
         </fieldset>
+        <div>
+          <div class="form-group">
+            <sq-datetimepicker name="date-input" [options]="options"></sq-datetimepicker>
+          </div>
+        </div>
+        <div>
+          <div class="form-group">
+            <div class="input-group date" id="datetimepicker1" data-target-input="nearest">
+              <input type="text" class="form-control datetimepicker-input" data-target="#datetimepicker1" />
+              <span class="input-group-addon" data-target="#datetimepicker1" data-toggle="datetimepicker">
+                        <span class="fa fa-calendar"></span>
+              </span>
+            </div>
+          </div>
+        </div>
         <div class="form-check">
           <label class="form-check-label">
       <input type="checkbox" class="form-check-input">
@@ -97,6 +119,19 @@
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
       </form>
+    </div>
+  </div>
+
+  <div class="row my-3">
+    <div class="col-12">
+      <div class="form-group">
+        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+      </div>
+    </div>
+    <div class="col-12">
+      <agm-map [latitude]="latitude" [longitude]="longitude" [scrollwheel]="false" [zoom]="zoom">
+        <agm-marker [latitude]="latitude" [longitude]="longitude"></agm-marker>
+      </agm-map>
     </div>
   </div>
 
