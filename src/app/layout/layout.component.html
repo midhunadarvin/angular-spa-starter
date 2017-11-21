@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<div class="wrapper">
+	<app-sidebar [ngStyle]="sidebarConfig.main" [options]="sidebarConfig"></app-sidebar>
+	<!-- Page Content Holder -->
+	<div class="content">
+		<router-outlet></router-outlet>
+	</div>
+</div>

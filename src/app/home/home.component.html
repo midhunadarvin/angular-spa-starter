@@ -1,13 +1,7 @@
-  <!-- this creates a google map on the page with the given lat/lng from -->
-  <!-- the component as the initial center of the map: -->
-  
-
-<div class="container">
-  <!-- Content here -->
-  
-  <div class="row my-3">
+<div>
+  <div class="row my-3" *ngIf="isLoading">
     <div class="col-12">
-      <div class="card" *ngIf="isLoading">
+      <div class="card">
         <h4 class="card-header">Fetching Github Repos...</h4>
         <div class="card-block mx-auto">
           <i class="fa fa-circle-o-notch fa-spin fa-3x"></i>
@@ -16,16 +10,22 @@
     </div>
   </div>
 
-
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-info navbar-btn pull-right" (click)="globalService.toggleSidebar()">
+        <span>Toggle Sidebar</span>
+      </button>
+    </div>
+  </div>
 
   <div class="row my-3">
     <div class="col-lg-6 my-3" *ngFor="let item of repos;let i = index;">
-      <div class="card h-100">
-        <div class="card-block">
+      <div class="card">
+        <div class="card-body">
           <h4 class="card-title">{{item.name}}</h4>
-          <h6 class="card-subtitle mb-2 text-muted">{{item.full_name}}</h6>
-          <p class="card-text">{{item.description}}</p>
-          <a [href]="item.html_url" target="blank" class="card-link">Github link</a>
+          <p class="card-text">{{item.full_name}}</p>
+          <!--<p class="card-text">{{item.description}}</p>-->
+          <a [href]="item.html_url" target="_blank" class="btn btn-primary">Github link</a>
         </div>
       </div>
     </div>
@@ -125,7 +125,8 @@
   <div class="row my-3">
     <div class="col-12">
       <div class="form-group">
-        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control" #search [formControl]="searchControl">
+        <input placeholder="search for location" autocorrect="off" autocapitalize="off" spellcheck="off" type="text" class="form-control"
+          #search [formControl]="searchControl">
       </div>
     </div>
     <div class="col-12">
@@ -134,6 +135,5 @@
       </agm-map>
     </div>
   </div>
-
 
 </div>

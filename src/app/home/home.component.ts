@@ -7,6 +7,7 @@ import { MapsAPILoader } from '@agm/core';
 
 import { DataService } from '../services/data.service';
 import { ToastComponent } from '../shared/toast/toast.component';
+import { GlobalService } from '../services/global.service';
 
 declare var google: any;
 
@@ -19,32 +20,30 @@ export class HomeComponent implements OnInit {
 
 	cats = [];
 	isLoading = true;
-
-	// For Google Maps Module Intergration
 	title: string = 'My first AGM project';
 	latitude: number = 51.678418;
 	longitude: number = 7.809007;
 	zoom: number;
-
-	@ViewChild("search")
-	public searchElementRef: ElementRef;
-	//create search FormControl
 	searchControl = new FormControl();
-
 	cat = {};
 	isEditing = false;
-	public repos: Array<Object>;
 	addCatForm: FormGroup;
 	name = new FormControl('', Validators.required);
 	age = new FormControl('', Validators.required);
 	weight = new FormControl('', Validators.required);
 
-	constructor(private http: Http,
+	@ViewChild("search")
+	public searchElementRef: ElementRef;
+	public repos: Array<Object>;	
+
+	constructor(
+		private http: Http,
 		private dataService: DataService,
 		public toast: ToastComponent,
 		private formBuilder: FormBuilder,
 		private mapsAPILoader: MapsAPILoader,
-		private ngZone: NgZone) { }
+		private ngZone: NgZone,
+		private globalService: GlobalService) { }
 
 	ngOnInit() {
 		this.getRepos();
@@ -96,4 +95,5 @@ export class HomeComponent implements OnInit {
 			() => this.isLoading = false
 		);
 	}
+
 }
