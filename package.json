@@ -12,7 +12,7 @@
     "url": "git+https://github.com/midhunadarvin/angular-spa-starter.git"
   },
   "keywords": [
-    "angular4",
+    "angular",
     "spa",
     "typescript",
     "angular-starter"
@@ -25,14 +25,16 @@
   "homepage": "https://github.com/midhunadarvin/angular-spa-starter#readme",
   "dependencies": {
     "@agm/core": "^1.0.0-beta.0",
-    "@angular/common": "^4.0.0",
-    "@angular/compiler": "^4.0.0",
-    "@angular/core": "^4.0.0",
-    "@angular/forms": "^4.0.0",
-    "@angular/http": "^4.0.0",
-    "@angular/platform-browser": "^4.0.0",
-    "@angular/platform-browser-dynamic": "^4.0.0",
-    "@angular/router": "^4.0.0",
+    "@angular/animations": "^5.0.0",
+    "@angular/common": "^5.0.0",
+    "@angular/compiler": "^5.0.0",
+    "@angular/core": "^5.0.0",
+    "@angular/forms": "^5.0.0",
+    "@angular/http": "^5.0.0",
+    "@angular/platform-browser": "^5.0.0",
+    "@angular/platform-browser-dynamic": "^5.0.0",
+    "@angular/platform-server": "^5.0.0",
+    "@angular/router": "^5.0.0",
     "bootstrap": "^4.0.0-alpha.6",
     "eonasdan-bootstrap-datetimepicker": "git+https://github.com/midhunadarvin/bootstrap-datetimepicker.git",
     "font-awesome": "^4.7.0",
@@ -40,16 +42,17 @@
     "ngx-eonasdan-datetimepicker": "git+https://github.com/midhunadarvin/ngx-eonasdan-datetimepicker.git",
     "ngx-resource": "^2.0.5",
     "popper.js": "^1.12.9",
-    "rxjs": "^5.1.0",
+    "rxjs": "^5.5.2",
     "tether": "1.4.0",
     "zone.js": "^0.8.4"
   },
   "devDependencies": {
-    "@angular/cli": "1.0.0",
-    "@angular/compiler-cli": "^4.0.0",
+    "@angular/cli": "^1.5.3",
+    "@angular/compiler-cli": "^5.0.0",
+    "@ngtools/webpack": "^1.8.3",
     "@types/googlemaps": "^3.26.20",
     "script-loader": "^0.7.0",
     "tslint": "~4.5.0",
-    "typescript": "~2.2.0"
+    "typescript": "^2.4.2"
   }
 }
