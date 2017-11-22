@@ -1,19 +1,26 @@
 <!-- Sidebar Holder -->
 <nav class="sidebar bg-inverse" [ngClass]="{'active': active, 'sidebar-normal': options.normal, 'sidebar-overlay': options.overlay, 'sidebar-compress': options.compress }">
   <div [ngStyle]="options['inner-wrap']">
-    <div class="sidebar-header">
-      <h3>Bootstrap Sidebar</h3>
-      <strong>BS</strong>
-    </div>
 
     <ul class="list-unstyled components">
       <p>Dummy Heading</p>
-      <li class="active">
+      <li *ngFor="let menu of menuItems" >
+        <a *ngIf="!menu.disabled" data-toggle="collapse" [attr.aria-expanded]="(menu.children.length > 0)?(menu.show): null" (click)="menu.show = !menu.show">
+          <i [class]="menu.icon"></i>
+          {{menu.title}}
+        </a>
+        <ul class="collapse list-unstyled" [ngClass]="{'show': menu.show}">
+          <li *ngFor="let submenu of menu.children">
+            <a href="#">{{submenu.title}}</a>
+          </li>
+        </ul>
+      </li>
+      <li>
         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
           <i class="glyphicon glyphicon-home"></i>
           Home
         </a>
-        <ul class="collapse list-unstyled" id="homeSubmenu">
+        <ul class="collapse list-unstyled" id="homeSubmenu" >
           <li>
             <a href="#">
               Home 1
