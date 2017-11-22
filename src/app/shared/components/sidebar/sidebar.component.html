@@ -9,7 +9,7 @@
           <i [class]="menu.icon"></i>
           <span>{{menu.title}}</span>
         </a>
-        <ul class="collapse list-unstyled" [@menuTrigger]="(menu.show)?'active':'inactive'">
+        <ul class="collapse list-unstyled" [ngClass]="{'show': menu.show }">
           <li *ngFor="let submenu of menu.children">
             <a href="#">{{submenu.title}}</a>
           </li>
