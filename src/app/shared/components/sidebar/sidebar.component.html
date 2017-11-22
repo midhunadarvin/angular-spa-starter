@@ -7,7 +7,7 @@
       <li *ngFor="let menu of items" >
         <a *ngIf="!menu.disabled" data-toggle="collapse" [attr.aria-expanded]="(menu.children.length > 0)?(menu.show): null" (click)="menu.show = !menu.show">
           <i [class]="menu.icon"></i>
-          {{menu.title}}
+          <span>{{menu.title}}</span>
         </a>
         <ul class="collapse list-unstyled" [@menuTrigger]="(menu.show)?'active':'inactive'">
           <li *ngFor="let submenu of menu.children">
@@ -15,7 +15,7 @@
           </li>
         </ul>
       </li>
-      <li>
+      <!--<li>
         <a href="#homeSubmenu" data-toggle="collapse" aria-expanded="false">
           <i class="glyphicon glyphicon-home"></i>
           Home
@@ -64,7 +64,7 @@
           <i class="glyphicon glyphicon-paperclip"></i>
           Contact
         </a>
-      </li>
+      </li>-->
     </ul>
   </div>
 </nav>
