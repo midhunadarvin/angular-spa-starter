@@ -3,13 +3,13 @@
   <div [ngStyle]="options['inner-wrap']">
 
     <ul class="list-unstyled components">
-      <p>Dummy Heading</p>
-      <li *ngFor="let menu of menuItems" >
+      <p>Sidebar Menu</p>
+      <li *ngFor="let menu of items" >
         <a *ngIf="!menu.disabled" data-toggle="collapse" [attr.aria-expanded]="(menu.children.length > 0)?(menu.show): null" (click)="menu.show = !menu.show">
           <i [class]="menu.icon"></i>
           {{menu.title}}
         </a>
-        <ul class="collapse list-unstyled" [ngClass]="{'show': menu.show}">
+        <ul class="collapse list-unstyled" [@menuTrigger]="(menu.show)?'active':'inactive'">
           <li *ngFor="let submenu of menu.children">
             <a href="#">{{submenu.title}}</a>
           </li>

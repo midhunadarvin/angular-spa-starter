@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { ResourceModule } from 'ngx-resource';
@@ -11,7 +11,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
     imports: [
-        BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
@@ -23,7 +23,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
     ],
     exports: [
         // Shared Modules
-        BrowserModule,
+        BrowserAnimationsModule,
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
