@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, ElementRef, HostListener } from '@angular/core';
 import {
   trigger,
   state,
@@ -37,10 +37,20 @@ export class SidebarComponent implements OnInit {
   @Input() public options: any;
   @Input() public items: Array<MenuItem>;
 
+  @HostListener('document:click', ['$event'])
+  clickOutside(event) {
+    if (this.elementRef.nativeElement.contains(event.target)) {
+      // alert('clicked Inside');
+    } else {
+      // alert('clicked Outside');
+      this.closeAllSubmenus();
+    }
+  }
+
   private active: boolean;
   private menuItems: any;
 
-  constructor(private globalService: GlobalService) { 
+  constructor(private globalService: GlobalService, private elementRef: ElementRef) { 
   }
 
   ngOnInit() {
@@ -48,5 +58,11 @@ export class SidebarComponent implements OnInit {
       status => {
         this.active = status;
       });
+  }
+
+  closeAllSubmenus() {
+    this.items.forEach((item) => {
+      item.show = false;
+    });
   }
 }

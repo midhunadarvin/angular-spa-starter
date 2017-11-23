@@ -54,12 +54,23 @@ $primary-color: #292B2C;
                     display: none;
                 }
                 li {
+                    position: relative;
                     a::before {
                         display: none;
                     }
                     span {
                         display: none;
                     }
+                }
+            }
+            .collapse {
+                &.show {
+                    position: absolute;
+                    top: 0;
+                    right: -154px;
+                    color: #FFF;
+                    z-index: 999;
+                    background-color: #292B2C;
                 }
             }
         }

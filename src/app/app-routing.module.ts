@@ -10,6 +10,7 @@ const routes: Routes = [
   {
     path: '',
     component: LayoutComponent,
+    data: { some_data: 'some value' },
     children: [
       {
         path: '',
