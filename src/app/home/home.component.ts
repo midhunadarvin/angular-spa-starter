@@ -6,7 +6,6 @@ import { } from 'googlemaps';
 import { MapsAPILoader } from '@agm/core';
 
 import { DataService } from '../services/data.service';
-import { ToastComponent } from '../shared/toast/toast.component';
 import { GlobalService } from '../services/global.service';
 
 declare var google: any;
@@ -39,7 +38,6 @@ export class HomeComponent implements OnInit {
 	constructor(
 		private http: Http,
 		private dataService: DataService,
-		public toast: ToastComponent,
 		private formBuilder: FormBuilder,
 		private mapsAPILoader: MapsAPILoader,
 		private ngZone: NgZone,

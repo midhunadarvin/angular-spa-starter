@@ -40,12 +40,12 @@ export class LayoutComponent implements OnInit {
           {
             'title': 'Sub Menu Item 1',
             'icon': 'icon-note',
-            'path': '/home/create-briefing/general-information'
+            'path': '/home'
           },
           {
             'title': 'Sub Menu Item 1',
             'icon': 'icon-note',
-            'path': '/home/create-briefing/select-template'
+            'path': '/home'
           }
         ]
       }
