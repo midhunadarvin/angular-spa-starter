@@ -8,7 +8,6 @@ import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 
 @NgModule({
     imports: [
@@ -16,13 +15,9 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        AgmCoreModule.forRoot({
-            apiKey: 'AIzaSyAbgbFXX-AunchKLoDFhmgiYUJaVsmCXKc',
-            libraries: ["places"]
-        }),
         LoadingModule.forRoot({
             animationType: ANIMATION_TYPES.threeBounce,
-            backdropBackgroundColour: 'rgba(0,0,0,0.1)',
+            backdropBackgroundColour: 'rgba(0, 0, 0, 0.1)',
             primaryColour: '#343A40',
             secondaryColour: '#343A40',
             tertiaryColour: '#343A40'
@@ -35,17 +30,12 @@ import { PageNotFoundComponent } from './components/page-not-found/page-not-foun
         FormsModule,
         ReactiveFormsModule,
         HttpModule,
-        AgmCoreModule,
         LoadingModule,
         // Shared Components
         NavbarComponent,
         SidebarComponent
     ],
-    declarations: [
-        NavbarComponent, 
-        SidebarComponent, 
-        PageNotFoundComponent
-    ],
+    declarations: [NavbarComponent, SidebarComponent],
     providers: [],
 })
 export class SharedModule { }
