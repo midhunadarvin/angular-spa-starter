@@ -1,5 +1,5 @@
-import { Component, OnInit, ViewChild, ElementRef, NgZone } from '@angular/core';
-import { FormGroup, FormControl, Validators, FormBuilder } from '@angular/forms';
+import { Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
+import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { Http } from '@angular/http';
 
 import { DataService } from '../services/data.service';
@@ -15,19 +15,19 @@ declare var google: any;
 })
 export class HomeComponent implements OnInit {
 
-	cats = [];
-	isLoading = true;
-	searchControl = new FormControl();
-	cat = {};
-	isEditing = false;
-	addCatForm: FormGroup;
-	name = new FormControl('', Validators.required);
-	age = new FormControl('', Validators.required);
-	weight = new FormControl('', Validators.required);
-
-	@ViewChild("search")
+	@ViewChild('search')
 	public searchElementRef: ElementRef;
-	public repos: Array<IRepo>;	
+	public repos: Array<IRepo>;
+
+	private cats = [];
+	private isLoading = true;
+	private searchControl = new FormControl();
+	private cat = {};
+	private isEditing = false;
+	private addCatForm: FormGroup;
+	private name = new FormControl('', Validators.required);
+	private age = new FormControl('', Validators.required);
+	private weight = new FormControl('', Validators.required);
 
 	constructor(
 		private http: Http,
@@ -35,7 +35,7 @@ export class HomeComponent implements OnInit {
 		private formBuilder: FormBuilder,
 		public globalService: GlobalService) { }
 
-	ngOnInit() {
+	public ngOnInit(): void {
 		this.getRepos();
 		this.addCatForm = this.formBuilder.group({
 			name: this.name,
@@ -44,11 +44,8 @@ export class HomeComponent implements OnInit {
 		});
 	}
 
-	ngAfterViewInit() {
-	}
-
-	getRepos() {
-		let inputParams = {
+	private getRepos(): void {
+		const inputParams = {
 			q: 'angular',
 			sort: 'stars',
 			page: 1,

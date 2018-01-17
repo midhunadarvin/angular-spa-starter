@@ -7,14 +7,14 @@ import { AppConfig } from '../../config/app.config';
 
 @Injectable()
 @ResourceParams({
-  url: AppConfig.API_ENDPOINT + '/search/'
+	url: AppConfig.API_ENDPOINT + '/search/'
 })
 export class GithubSearchResource extends Resource {
 
-  @ResourceAction({
-    method: RequestMethod.Get,
-    path: '/repositories'
-  })
-  get: ResourceMethod<{ q: any}, any>;
+	@ResourceAction({
+		method: RequestMethod.Get,
+		path: '/repositories'
+	})
+	public get: ResourceMethod<{ q: any}, any>;
 
 }

@@ -5,7 +5,8 @@
   "main": "app.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "ng serve --open"
+    "start": "ng serve --open",
+    "compodoc": "./node_modules/.bin/compodoc -p src/tsconfig.app.json"
   },
   "repository": {
     "type": "git",
@@ -52,8 +53,11 @@
     "@angular/compiler-cli": "^5.0.0",
     "@ngtools/webpack": "^1.8.3",
     "@types/googlemaps": "^3.26.20",
+    "angular-tslint-rules": "^1.1.0",
+    "codelyzer": "^4.0.2",
     "script-loader": "^0.7.0",
-    "tslint": "~4.5.0",
+    "tslint": "^4.5.1",
+    "tslint-angular": "^1.0.0",
     "typescript": "^2.4.2"
   }
 }

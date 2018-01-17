@@ -10,32 +10,32 @@ import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 
 @NgModule({
-    imports: [
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpModule,
-        LoadingModule.forRoot({
-            animationType: ANIMATION_TYPES.threeBounce,
-            backdropBackgroundColour: 'rgba(0, 0, 0, 0.1)',
-            primaryColour: '#343A40',
-            secondaryColour: '#343A40',
-            tertiaryColour: '#343A40'
-        }),
-        ResourceModule.forRoot()
-    ],
-    exports: [
-        // Shared Modules
-        BrowserAnimationsModule,
-        FormsModule,
-        ReactiveFormsModule,
-        HttpModule,
-        LoadingModule,
-        // Shared Components
-        NavbarComponent,
-        SidebarComponent
-    ],
-    declarations: [NavbarComponent, SidebarComponent],
-    providers: [],
+	imports: [
+		BrowserAnimationsModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HttpModule,
+		LoadingModule.forRoot({
+			animationType: ANIMATION_TYPES.threeBounce,
+			backdropBackgroundColour: 'rgba(0, 0, 0, 0.1)',
+			primaryColour: '#343A40',
+			secondaryColour: '#343A40',
+			tertiaryColour: '#343A40'
+		}),
+		ResourceModule.forRoot()
+	],
+	exports: [
+		// Shared Modules
+		BrowserAnimationsModule,
+		FormsModule,
+		ReactiveFormsModule,
+		HttpModule,
+		LoadingModule,
+		// Shared Components
+		NavbarComponent,
+		SidebarComponent
+	],
+	declarations: [NavbarComponent, SidebarComponent],
+	providers: []
 })
 export class SharedModule { }

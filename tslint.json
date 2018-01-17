@@ -1,0 +1,18 @@
+{
+	"rulesDirectory": [
+		"node_modules/codelyzer"
+	],
+	"extends": [
+		"angular-tslint-rules"
+	],
+	"rules": {
+		// override tslint rules here
+		"indent": [
+			true,
+			"tabs"
+		],
+		"ordered-imports": [
+			false
+		]
+	}
+}
