@@ -41,7 +41,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.2.1",
     "ngx-eonasdan-datetimepicker": "git+https://github.com/midhunadarvin/ngx-eonasdan-datetimepicker.git",
-    "ngx-loading": "^1.0.8",
+    "ngx-loading": "^1.0.14",
     "ngx-resource": "^2.0.5",
     "popper.js": "^1.12.9",
     "rxjs": "^5.5.2",
@@ -55,8 +55,13 @@
     "@types/googlemaps": "^3.26.20",
     "angular-tslint-rules": "^1.1.0",
     "codelyzer": "^4.0.2",
+    "htmlhint": "^0.9.13",
     "script-loader": "^0.7.0",
-    "tslint": "^4.5.1",
+    "stylelint": "^8.4.0",
+    "stylelint-config-recommended": "^2.0.1",
+    "stylelint-config-recommended-scss": "^3.0.0",
+    "stylelint-scss": "^2.2.0",
+    "tslint": "^5.9.1",
     "tslint-angular": "^1.0.0",
     "typescript": "^2.4.2"
   }
