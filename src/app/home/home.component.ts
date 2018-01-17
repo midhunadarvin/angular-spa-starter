@@ -4,6 +4,7 @@ import { Http } from '@angular/http';
 
 import { DataService } from '../services/data.service';
 import { GlobalService } from '../services/global.service';
+import { IRepo } from '../shared/models/repo.model';
 
 declare var google: any;
 
@@ -26,23 +27,21 @@ export class HomeComponent implements OnInit {
 
 	@ViewChild("search")
 	public searchElementRef: ElementRef;
-	public repos: Array<Object>;	
+	public repos: Array<IRepo>;	
 
 	constructor(
 		private http: Http,
 		private dataService: DataService,
 		private formBuilder: FormBuilder,
-		private globalService: GlobalService) { }
+		public globalService: GlobalService) { }
 
 	ngOnInit() {
 		this.getRepos();
-
 		this.addCatForm = this.formBuilder.group({
 			name: this.name,
 			age: this.age,
 			weight: this.weight
 		});
-
 	}
 
 	ngAfterViewInit() {
