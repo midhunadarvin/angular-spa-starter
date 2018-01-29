@@ -11,6 +11,7 @@
 			true,
 			"tabs"
 		],
+		"prefer-template": false,
 		"ordered-imports": [
 			false
 		]

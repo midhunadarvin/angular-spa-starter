@@ -3,7 +3,7 @@ import { Resource, ResourceParams, ResourceAction, ResourceMethodStrict } from '
 import { ResourceMethod } from 'ngx-resource/src/Interfaces';
 import { RequestMethod } from '@angular/http';
 
-import { AppConfig } from '../../config/app.config';
+import { environment } from '../../../environments/environment';
 interface IQuery {
 	owner?: number;
 	repo?: string;
@@ -11,7 +11,7 @@ interface IQuery {
 }
 @Injectable()
 @ResourceParams({
-	url: AppConfig.API_ENDPOINT + '/repos/'
+		url: environment.API_ENDPOINT + '/repos/'
 })
 export class GithubRepoResource extends Resource {
 
@@ -19,6 +19,6 @@ export class GithubRepoResource extends Resource {
 		method: RequestMethod.Get,
 		path: '/{!owner}/{!repo}'
 	})
-	public get: ResourceMethod<IQuery, any>;
+	get: ResourceMethod<IQuery, any>;
 
 }

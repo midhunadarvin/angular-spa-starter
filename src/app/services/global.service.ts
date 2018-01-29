@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Subject } from 'rxjs/Subject';
 import { Observable } from 'rxjs/Observable';
 import { BehaviorSubject } from 'rxjs/BehaviorSubject';
@@ -14,17 +15,17 @@ export class GlobalService {
 	private spinnerActive: boolean;
 	private spinnerActiveSource = new Subject<boolean>();
 
-	constructor() {
+	constructor(private http: HttpClient) {
 		this.sidebarActive$ = this.sidebarActiveSource.asObservable();
 		this.spinnerActive$ = this.spinnerActiveSource.asObservable();
 	}
 
-	public toggleSidebar(): void {
+	toggleSidebar(): void {
 		this.sidebarActive = !this.sidebarActive;
 		this.sidebarActiveSource.next(this.sidebarActive);
 	}
 
-	public toggleSpinner(): void {
+	toggleSpinner(): void {
 		this.spinnerActive = !this.spinnerActive;
 		this.spinnerActiveSource.next(this.spinnerActive);
 
@@ -36,12 +37,12 @@ export class GlobalService {
 		}
 	}
 
-	public showSpinner(): void {
+	showSpinner(): void {
 		this.spinnerActive = true;
 		this.spinnerActiveSource.next(this.spinnerActive);
 	}
 
-	public hideSpinner(): void {
+	hideSpinner(): void {
 		this.spinnerActive = false;
 		this.spinnerActiveSource.next(this.spinnerActive);
 	}

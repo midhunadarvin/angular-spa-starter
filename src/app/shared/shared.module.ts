@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
 import { ResourceModule } from 'ngx-resource';
 import { AgmCoreModule } from '@agm/core';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
@@ -14,7 +14,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 		BrowserAnimationsModule,
 		FormsModule,
 		ReactiveFormsModule,
-		HttpModule,
+		HttpClientModule,
 		LoadingModule.forRoot({
 			animationType: ANIMATION_TYPES.threeBounce,
 			backdropBackgroundColour: 'rgba(0, 0, 0, 0.1)',
@@ -29,7 +29,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 		BrowserAnimationsModule,
 		FormsModule,
 		ReactiveFormsModule,
-		HttpModule,
+		HttpClientModule,
 		LoadingModule,
 		// Shared Components
 		NavbarComponent,

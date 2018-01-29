@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 
-import { AppConfig } from './config/app.config';
+import { environment } from '../environments/environment';
 import { AppRoutingModule } from './app-routing.module';
 import { SharedModule } from './shared/shared.module';
 import { AppComponent } from './app.component';
@@ -11,22 +11,22 @@ import { DataService } from './services/data.service';
 import { GlobalService } from './services/global.service';
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HomeComponent,
-    AboutComponent,
-    LayoutComponent
-  ],
-  imports: [
-    AppRoutingModule,
-    SharedModule
-  ],
-  providers: [
-    DataService,
-    GlobalService,
-    { provide: 'API_ENDPOINT', useValue: AppConfig.API_ENDPOINT }
-  ],
-  bootstrap: [AppComponent]
+	declarations: [
+		AppComponent,
+		HomeComponent,
+		AboutComponent,
+		LayoutComponent
+	],
+	imports: [
+		AppRoutingModule,
+		SharedModule
+	],
+	providers: [
+		DataService,
+		GlobalService,
+		{ provide: 'API_ENDPOINT', useValue: environment.API_ENDPOINT }
+	],
+	bootstrap: [AppComponent]
 })
 
 export class AppModule { }

@@ -3,11 +3,11 @@ import { Resource, ResourceParams, ResourceAction, ResourceMethodStrict } from '
 import { ResourceMethod } from 'ngx-resource/src/Interfaces';
 import { RequestMethod } from '@angular/http';
 
-import { AppConfig } from '../../config/app.config';
+import { environment } from '../../../environments/environment';
 
 @Injectable()
 @ResourceParams({
-	url: AppConfig.API_ENDPOINT + '/search/'
+	url: environment.API_ENDPOINT + '/search/'
 })
 export class GithubSearchResource extends Resource {
 
@@ -15,6 +15,6 @@ export class GithubSearchResource extends Resource {
 		method: RequestMethod.Get,
 		path: '/repositories'
 	})
-	public get: ResourceMethod<{ q: any}, any>;
+	get: ResourceMethod<{ q: any}, any>;
 
 }

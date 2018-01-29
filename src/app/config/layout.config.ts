@@ -1,31 +1,31 @@
 export class LayoutConfig {
-	public static sidebarNormalConfig = {
-		'normal': true,
-		'main': {
+	static sidebarNormalConfig = {
+		normal: true,
+		main: {
 		},
 		'inner-wrap': {
 		}
 	};
 
-	public static sidebarFixedConfig = {
-		'main': {
+	static sidebarFixedConfig = {
+		main: {
 		},
 		'inner-wrap': {
-			'width': '250px',
-			'position': 'fixed'
+			width: '250px',
+			position: 'fixed'
 		}
 	};
 
-	public static sidebarOverlayConfig = {
-		'overlay': true,
+	static sidebarOverlayConfig = {
+		overlay: true,
 		'inner-wrap': {
-			'position': 'relative'
+			position: 'relative'
 		}
 	};
 
-	public static sidebarCompressedConfig = {
-		'compress': true,
-		'main': {
+	static sidebarCompressedConfig = {
+		compress: true,
+		main: {
 		},
 		'inner-wrap': {
 		}
