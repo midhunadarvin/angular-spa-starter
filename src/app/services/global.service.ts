@@ -6,8 +6,8 @@ import { BehaviorSubject } from 'rxjs/BehaviorSubject';
 
 @Injectable()
 export class GlobalService {
-	public sidebarActive$: Observable<boolean>;
-	public spinnerActive$: Observable<boolean>;
+	sidebarActive$: Observable<boolean>;
+	spinnerActive$: Observable<boolean>;
 
 	private sidebarActive: boolean;
 	private sidebarActiveSource = new Subject<boolean>();
@@ -29,12 +29,11 @@ export class GlobalService {
 		this.spinnerActive = !this.spinnerActive;
 		this.spinnerActiveSource.next(this.spinnerActive);
 
-		if (this.spinnerActive) {
+		if (this.spinnerActive)
 			setTimeout(() => {
 				this.spinnerActive = false;
 				this.spinnerActiveSource.next(this.spinnerActive);
 			}, 5000);
-		}
 	}
 
 	showSpinner(): void {

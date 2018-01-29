@@ -8,11 +8,11 @@ import { GlobalService } from './services/global.service';
 	styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-	public loading: boolean;
+	loading: boolean;
 
 	constructor(private globalService: GlobalService) {}
 
-	public ngOnInit(): void {
+	ngOnInit(): void {
 		// Called after the constructor, initializing input properties, and the first call to ngOnChanges.
 		// Add 'implements OnInit' to the class.
 		this.globalService.spinnerActive$.subscribe(value => {

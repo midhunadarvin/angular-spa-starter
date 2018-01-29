@@ -1,6 +1,5 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild} from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
-import { Http } from '@angular/http';
 
 import { DataService } from '../services/data.service';
 import { GlobalService } from '../services/global.service';
@@ -16,8 +15,8 @@ declare var google: any;
 export class HomeComponent implements OnInit {
 
 	@ViewChild('search')
-	public searchElementRef: ElementRef;
-	public repos: Array<IRepo>;
+	searchElementRef: ElementRef;
+	repos: Array<IRepo>;
 
 	private cats = [];
 	private isLoading = true;
@@ -30,12 +29,11 @@ export class HomeComponent implements OnInit {
 	private weight = new FormControl('', Validators.required);
 
 	constructor(
-		private http: Http,
 		private dataService: DataService,
 		private formBuilder: FormBuilder,
 		public globalService: GlobalService) { }
 
-	public ngOnInit(): void {
+	ngOnInit(): void {
 		this.getRepos();
 		this.addCatForm = this.formBuilder.group({
 			name: this.name,
