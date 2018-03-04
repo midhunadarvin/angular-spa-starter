@@ -1,5 +1,6 @@
 import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
+import { NGXLogger } from 'ngx-logger';
 
 import { DataService } from '../services/data.service';
 import { GlobalService } from '../services/global.service';
@@ -18,8 +19,8 @@ export class HomeComponent implements OnInit {
 	searchElementRef: ElementRef;
 	repos: Array<IRepo>;
 
+	isLoading = true;
 	private cats = [];
-	private isLoading = true;
 	private searchControl = new FormControl();
 	private cat = {};
 	private isEditing = false;
@@ -31,7 +32,8 @@ export class HomeComponent implements OnInit {
 	constructor(
 		private dataService: DataService,
 		private formBuilder: FormBuilder,
-		public globalService: GlobalService) { }
+		public globalService: GlobalService,
+		public logger: NGXLogger) { }
 
 	ngOnInit(): void {
 		this.getRepos();
@@ -50,8 +52,11 @@ export class HomeComponent implements OnInit {
 			per_page: 6
 		};
 		this.dataService.searchRepos(inputParams).subscribe(
-			data => this.repos = data.items,
-			error => console.log(error),
+			data => {
+				this.logger.debug('Fetched Repos :');
+				this.repos = data.items;
+			},
+			error => this.logger.debug(error),
 			() => this.isLoading = false
 		);
 	}

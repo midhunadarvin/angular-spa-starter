@@ -4,6 +4,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
+import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
@@ -14,6 +15,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
+		LoggerModule.forRoot({ level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR }),
 		LoadingModule.forRoot({
 			animationType: ANIMATION_TYPES.threeBounce,
 			backdropBackgroundColour: 'rgba(0, 0, 0, 0.1)',
