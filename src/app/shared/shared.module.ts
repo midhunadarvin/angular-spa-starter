@@ -5,9 +5,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AgmCoreModule } from '@agm/core';
 import { LoadingModule, ANIMATION_TYPES } from 'ngx-loading';
 import { LoggerModule, NgxLoggerLevel } from 'ngx-logger';
+import { ModalDialogModule } from 'ngx-modal-dialog';
 
 import { NavbarComponent } from './components/navbar/navbar.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ModalComponent } from './components/modal/modal.component';
 
 @NgModule({
 	imports: [
@@ -15,6 +17,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 		FormsModule,
 		ReactiveFormsModule,
 		HttpClientModule,
+		ModalDialogModule.forRoot(),
 		LoggerModule.forRoot({ level: NgxLoggerLevel.DEBUG, serverLogLevel: NgxLoggerLevel.ERROR }),
 		LoadingModule.forRoot({
 			animationType: ANIMATION_TYPES.threeBounce,
@@ -33,9 +36,11 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 		LoadingModule,
 		// Shared Components
 		NavbarComponent,
-		SidebarComponent
+		SidebarComponent,
+		ModalComponent
 	],
-	declarations: [NavbarComponent, SidebarComponent],
+	entryComponents: [ModalComponent],
+	declarations: [NavbarComponent, SidebarComponent, ModalComponent],
 	providers: []
 })
 export class SharedModule { }

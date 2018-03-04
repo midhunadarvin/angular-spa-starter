@@ -1,7 +1,9 @@
-import { Component, ElementRef, NgZone, OnInit, ViewChild } from '@angular/core';
+import { Component, ElementRef, NgZone, OnInit, ViewChild, ViewContainerRef } from '@angular/core';
 import { FormControl, FormGroup, Validators, FormBuilder } from '@angular/forms';
 import { NGXLogger } from 'ngx-logger';
+import { ModalDialogService } from 'ngx-modal-dialog';
 
+import { ModalComponent } from '../shared/components/modal/modal.component';
 import { DataService } from '../services/data.service';
 import { GlobalService } from '../services/global.service';
 import { IRepo } from '../shared/models/repo.model';
@@ -33,7 +35,9 @@ export class HomeComponent implements OnInit {
 		private dataService: DataService,
 		private formBuilder: FormBuilder,
 		public globalService: GlobalService,
-		public logger: NGXLogger) { }
+		public logger: NGXLogger,
+		public modalService: ModalDialogService,
+		public viewRef: ViewContainerRef) { }
 
 	ngOnInit(): void {
 		this.getRepos();
@@ -41,6 +45,13 @@ export class HomeComponent implements OnInit {
 			name: this.name,
 			age: this.age,
 			weight: this.weight
+		});
+	}
+
+	openNewDialog(): void {
+		this.modalService.openDialog(this.viewRef, {
+			title: 'Some modal title',
+			childComponent: ModalComponent
 		});
 	}
 
@@ -60,5 +71,4 @@ export class HomeComponent implements OnInit {
 			() => this.isLoading = false
 		);
 	}
-
 }

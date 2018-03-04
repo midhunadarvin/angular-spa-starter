@@ -14,11 +14,35 @@ $primary-color: #292B2C;
     background: $primary-color;
     color: #fff;
     transition: all 0.3s;
-}
-
-.sidebar {
-    color: #fff;
-    transition: all 0.3s;
+    .sidebar-header {
+        padding: 20px; // background: #6d7fcc;
+    }
+    .components {
+        padding: 20px 0;
+        border-bottom: 1px solid $primary-color;
+    }
+    ul {
+        p {
+            color: #fff;
+            padding: 10px;
+        }
+        li {
+            a {
+                padding: 10px;
+                font-size: 1.1em;
+                display: block;
+                &:hover {
+                    color: #7386D5;
+                    background: #fff;
+                }
+            }
+            &.active>a,
+            a[aria-expanded="true"] {
+                color: #7386D5;
+                background: #fff;
+            }
+        }
+    }
     &.sidebar-normal {
         &.active {
             margin-left: -250px;
@@ -47,6 +71,7 @@ $primary-color: #292B2C;
             .sidebar-header {
                 h3 {
                     display: none;
+                    transition: all 0.3s;
                 }
             }
             .list-unstyled.components {
@@ -75,54 +100,25 @@ $primary-color: #292B2C;
             }
         }
     }
-    .sidebar-header {
-        padding: 20px; // background: #6d7fcc;
-    }
 }
 
-.sidebar ul.components {
-    padding: 20px 0;
-    border-bottom: 1px solid $primary-color;
-}
-
-.sidebar ul p {
-    color: #fff;
-    padding: 10px;
-}
-
-.sidebar ul li a {
-    padding: 10px;
-    font-size: 1.1em;
-    display: block;
-}
-
-.sidebar ul li a:hover {
-    color: #7386D5;
-    background: #fff;
-}
-
-.sidebar ul li.active>a,
-a[aria-expanded="true"] {
-    color: #7386D5;
-    background: #fff;
-}
-
-a[data-toggle="collapse"] {
+li a[data-toggle="collapse"] {
     position: relative;
 }
 
 a[aria-expanded="false"]::before,
 a[aria-expanded="true"]::before {
-    content: '\e259';
+    content: "\e259";
     display: block;
     position: absolute;
     right: 20px;
-    font-family: 'Glyphicons Halflings';
+    top: 15px;
+    font-family: "Glyphicons Halflings";
     font-size: 0.6em;
 }
 
 a[aria-expanded="true"]::before {
-    content: '\e260';
+    content: "\e260";
 }
 
 ul ul a {
